@@ -2,20 +2,40 @@
 
 <div>
   <label>Length</label>
-  <input type="text" class="input" />
+  <input
+    #passLengthEvent
+    (input)="onChangeLength(passLengthEvent.value)"
+    type="text"
+    class="input"
+  />
 </div>
 
 <div>
   <label>Use letters</label>
-  <input type="checkbox" name="letters" id="letters" />
+  <input
+    (change)="onChangeUseLetters()"
+    type="checkbox"
+    name="letters"
+    id="letters"
+  />
 </div>
 <div>
   <label>Use numbers</label>
-  <input type="checkbox" name="numbers" id="numbers" />
+  <input
+    (change)="onChangeUseNumbers()"
+    type="checkbox"
+    name="numbers"
+    id="numbers"
+  />
 </div>
 <div>
   <label>Use symbols</label>
-  <input type="checkbox" name="symbols" id="symbols" />
+  <input
+    (change)="onChangeUseSymbols()"
+    type="checkbox"
+    name="symbols"
+    id="symbols"
+  />
 </div>
 
 <div>
