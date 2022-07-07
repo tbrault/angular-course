@@ -18,7 +18,6 @@ export class AppComponent {
     if (!isNaN(parsedValue)) {
       this.passwordLength = parsedValue;
     }
-    console.log(this.passwordLength);
   }
 
   onChangeUseLetters(): void {
@@ -34,6 +33,30 @@ export class AppComponent {
   }
 
   generatePassword(): void {
-    this.password = 'MY PASSWORD';
+    const letters = 'abcdefghijklmnopqrstuvwxyz';
+    const numbers = '0123456789';
+    const symbols = '#{[(!?@';
+
+    let validateCharacters = '';
+    let generatedPassword = '';
+
+    if (this.isIncludedLetters) {
+      validateCharacters += letters;
+    }
+
+    if (this.isIncludedNumbers) {
+      validateCharacters += numbers;
+    }
+
+    if (this.isIncludedSymbols) {
+      validateCharacters += symbols;
+    }
+
+    for (let i = 0; i < this.passwordLength; i++) {
+      const index = Math.floor(Math.random() * validateCharacters.length);
+      generatedPassword += validateCharacters[index];
+    }
+
+    this.password = generatedPassword;
   }
 }

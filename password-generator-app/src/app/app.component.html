@@ -39,7 +39,18 @@
 </div>
 
 <div>
-  <button class="button" (click)="generatePassword()">Generate!</button>
+  <button
+    [disabled]="
+      !(
+        passwordLength &&
+        (isIncludedLetters || isIncludedNumbers || isIncludedSymbols)
+      )
+    "
+    class="button"
+    (click)="generatePassword()"
+  >
+    Generate!
+  </button>
 </div>
 
 <div>
