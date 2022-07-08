@@ -26,4 +26,16 @@ export class AppComponent {
       url: 'https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Zm9yZXN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60',
     },
   ];
+
+  updateCurrentImage(index: number) {
+    this.currentPage = index;
+  }
+
+  goPreviousImage() {
+    --this.currentPage;
+  }
+
+  goNextImage() {
+    ++this.currentPage;
+  }
 }
