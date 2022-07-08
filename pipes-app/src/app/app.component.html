@@ -18,4 +18,22 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="form-group col">
+      <label>Date</label>
+      <input
+        class="form-control"
+        type="date"
+        #pathDateEvent
+        (input)="onDateChange(pathDateEvent.value)"
+      />
+    </div>
+
+    <div class="col">
+      <label><b>Date</b></label>
+      <div>
+        {{ date | date: "MMMM dd, yyyy" }}
+      </div>
+    </div>
+  </div>
 </div>
