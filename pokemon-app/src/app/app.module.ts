@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BorderCardDirectiveDirective } from './border-card-directive.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BorderCardDirectiveDirective
   ],
   imports: [
     BrowserModule,
